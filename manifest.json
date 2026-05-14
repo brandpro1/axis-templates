@@ -1,0 +1,307 @@
+[
+  {
+    "slug": "clinica-medica-premium",
+    "name": "Clínica Médica",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "hospital-saude",
+    "name": "Hospital & Saúde",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "psicologa-clinica",
+    "name": "Psicóloga Clínica",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "consultorio-medico",
+    "name": "Consultório Médico",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "personal-trainer",
+    "name": "Personal Trainer",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "academia-fitness",
+    "name": "Academia & Fitness",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "fisioterapia",
+    "name": "Fisioterapia",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "spa-bem-estar",
+    "name": "Spa & Bem-Estar",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "clinica-estetica",
+    "name": "Clínica Estética",
+    "niche": "Saúde & Bem-Estar"
+  },
+  {
+    "slug": "restaurante-pizzaria",
+    "name": "Restaurante Premium",
+    "niche": "Gastronomia"
+  },
+  {
+    "slug": "restaurante-moderno",
+    "name": "Restaurante Moderno",
+    "niche": "Gastronomia"
+  },
+  {
+    "slug": "cafeteria-coffee-shop",
+    "name": "Cafeteria",
+    "niche": "Gastronomia"
+  },
+  {
+    "slug": "delivery-dark-kitchen",
+    "name": "Delivery / Dark Kitchen",
+    "niche": "Gastronomia"
+  },
+  {
+    "slug": "hotel-pousada",
+    "name": "Hotel & Pousada",
+    "niche": "Gastronomia"
+  },
+  {
+    "slug": "bistrô-gourmet",
+    "name": "Bistrô Gourmet",
+    "niche": "Gastronomia"
+  },
+  {
+    "slug": "nutricao-saudavel",
+    "name": "Nutrição Saudável",
+    "niche": "Gastronomia"
+  },
+  {
+    "slug": "advogado-escritorio",
+    "name": "Advogado & Escritório",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "escritorio-advocacia",
+    "name": "Escritório de Advocacia",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "consultoria-empresarial",
+    "name": "Consultoria Empresarial",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "contador-contabilidade",
+    "name": "Contador & Contabilidade",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "agencia-de-marketing",
+    "name": "Agência de Marketing",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "agencia-digital",
+    "name": "Agência Digital",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "arquiteto-arquitetura",
+    "name": "Arquiteto & Arquitetura",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "designer-ux",
+    "name": "Designer & UX",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "fotografo",
+    "name": "Fotógrafo",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "fotografo-premium",
+    "name": "Fotógrafo Premium",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "coach-executivo",
+    "name": "Coach Executivo",
+    "niche": "Serviços Profissionais"
+  },
+  {
+    "slug": "imobiliaria",
+    "name": "Imobiliária",
+    "niche": "Imóveis & Construção"
+  },
+  {
+    "slug": "construtora-incorporadora",
+    "name": "Construtora",
+    "niche": "Imóveis & Construção"
+  },
+  {
+    "slug": "loteamento",
+    "name": "Loteamento",
+    "niche": "Imóveis & Construção"
+  },
+  {
+    "slug": "incorporadora",
+    "name": "Incorporadora",
+    "niche": "Imóveis & Construção"
+  },
+  {
+    "slug": "corretor-imoveis",
+    "name": "Corretor de Imóveis",
+    "niche": "Imóveis & Construção"
+  },
+  {
+    "slug": "imoveis-premium",
+    "name": "Imóveis Premium",
+    "niche": "Imóveis & Construção"
+  },
+  {
+    "slug": "reforma-decoracao",
+    "name": "Reforma & Decoração",
+    "niche": "Imóveis & Construção"
+  },
+  {
+    "slug": "startup-saas",
+    "name": "Startup SaaS",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "produto-ia-ai-tool",
+    "name": "Produto IA / AI",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "saas-dark-premium",
+    "name": "SaaS Dark Premium",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "fintech-startup",
+    "name": "Fintech Startup",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "app-ia-criativo",
+    "name": "App IA Criativo",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "saas-chat-ai",
+    "name": "SaaS Chat AI",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "crm-vendas-ia",
+    "name": "CRM Vendas IA",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "app-mobile",
+    "name": "App Mobile",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "app-viagens",
+    "name": "App de Viagens",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "agencia-tech",
+    "name": "Agência Tech",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "produto-eletronico",
+    "name": "Produto Eletrônico",
+    "niche": "Tecnologia & SaaS"
+  },
+  {
+    "slug": "lava-rapido-auto-center",
+    "name": "Lava-Rápido",
+    "niche": "Comércio & Varejo"
+  },
+  {
+    "slug": "auto-center",
+    "name": "Auto Center",
+    "niche": "Comércio & Varejo"
+  },
+  {
+    "slug": "mecanica-automotiva",
+    "name": "Mecânica",
+    "niche": "Comércio & Varejo"
+  },
+  {
+    "slug": "concessionaria",
+    "name": "Concessionária",
+    "niche": "Comércio & Varejo"
+  },
+  {
+    "slug": "barbearia-salao",
+    "name": "Barbearia & Salão",
+    "niche": "Comércio & Varejo"
+  },
+  {
+    "slug": "escola-colegio",
+    "name": "Escola & Colégio",
+    "niche": "Educação & Eventos"
+  },
+  {
+    "slug": "curso-presencial",
+    "name": "Curso Presencial",
+    "niche": "Educação & Eventos"
+  },
+  {
+    "slug": "universidade-faculdade",
+    "name": "Universidade",
+    "niche": "Educação & Eventos"
+  },
+  {
+    "slug": "academia-de-idiomas",
+    "name": "Academia de Idiomas",
+    "niche": "Educação & Eventos"
+  },
+  {
+    "slug": "casamento-eventos-sociais",
+    "name": "Casamento & Eventos",
+    "niche": "Educação & Eventos"
+  },
+  {
+    "slug": "evento-presencial",
+    "name": "Evento Presencial",
+    "niche": "Educação & Eventos"
+  },
+  {
+    "slug": "festival-show",
+    "name": "Festival & Show",
+    "niche": "Educação & Eventos"
+  },
+  {
+    "slug": "freelancer-dev",
+    "name": "Freelancer Dev",
+    "niche": "Portfolio & Freelancer"
+  },
+  {
+    "slug": "portfolio-desenvolvedor",
+    "name": "Portfolio Dev",
+    "niche": "Portfolio & Freelancer"
+  },
+  {
+    "slug": "portfolio-criativo",
+    "name": "Portfolio Criativo",
+    "niche": "Portfolio & Freelancer"
+  },
+  {
+    "slug": "portfolio-pessoal",
+    "name": "Portfolio Pessoal",
+    "niche": "Portfolio & Freelancer"
+  }
+]

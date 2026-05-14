@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Axis Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#08060a;color:#f0ece4;font-family:Inter,sans-serif}
+.hdr{padding:36px 48px 22px;background:linear-gradient(180deg,#0f0c10,#08060a);border-bottom:1px solid rgba(184,151,90,.15)}
+.hdr h1{font-family:Oswald,sans-serif;font-size:26px;font-weight:700;letter-spacing:.1em;color:#b8975a;margin-bottom:4px}
+.hdr p{font-size:12px;color:rgba(240,236,228,.4);margin-bottom:16px}
+.sw{display:flex;gap:10px;align-items:center}
+#s{flex:1;max-width:400px;padding:9px 14px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(184,151,90,.25);color:#f0ece4;font-size:13px;outline:none}
+#s::placeholder{color:rgba(240,236,228,.3)}#vc{font-size:11px;color:rgba(240,236,228,.35)}
+.fi{padding:12px 48px;display:flex;gap:7px;overflow-x:auto;background:#0f0c10;border-bottom:1px solid rgba(184,151,90,.08);position:sticky;top:0;z-index:10;scrollbar-width:none}
+.fb{padding:5px 13px;border-radius:20px;font-size:11px;font-weight:700;font-family:Oswald,sans-serif;letter-spacing:.05em;cursor:pointer;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(240,236,228,.45);white-space:nowrap;transition:all .15s}
+.fb:hover,.fb.active{background:rgba(184,151,90,.15);border-color:rgba(184,151,90,.5);color:#b8975a}
+.fb span{opacity:.5;font-size:10px}
+.gw{padding:28px 48px}.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:18px}
+.card{background:#111;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.07);transition:all .17s;cursor:pointer}
+.card:hover{border-color:rgba(184,151,90,.6);box-shadow:0 14px 44px rgba(0,0,0,.7);transform:translateY(-3px)}.card.hidden{display:none}
+.ct{position:relative;height:216px;overflow:hidden;background:#0a0a0a}
+.co{position:absolute;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;transition:opacity .17s}
+.card:hover .co{opacity:1}
+.bn{font-size:12px;font-weight:600;padding:8px 18px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;text-decoration:none}
+.bu{font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;background:#b8975a;border:none;color:#000;cursor:pointer;font-family:Oswald,sans-serif;letter-spacing:.04em}
+.badge{position:absolute;top:7px;left:7px;font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px;font-family:Oswald,sans-serif}
+.cf{padding:9px 11px 11px}.cn{font-family:Oswald,sans-serif;font-weight:700;font-size:13px;color:#f0ece4;letter-spacing:.03em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:1px}
+.cs{font-size:10px;color:rgba(240,236,228,.4)}.empty{text-align:center;padding:70px 0;color:rgba(240,236,228,.3);font-size:14px;display:none}
+.toast{position:fixed;bottom:24px;right:24px;background:#1a1a1a;border:1px solid rgba(184,151,90,.4);color:#f0ece4;padding:11px 16px;border-radius:10px;font-size:13px;z-index:100;transform:translateY(70px);opacity:0;transition:all .3s;pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1}
+@media(max-width:600px){.hdr,.gw{padding-left:16px;padding-right:16px}.fi{padding-left:16px;padding-right:16px}}
+</style></head><body>
+<div class="hdr"><h1>AXIS TEMPLATES</h1><p>61 projetos open source &mdash; HTML &bull; Bootstrap &bull; Tailwind CSS</p>
+<div class="sw"><input id="s" type="text" placeholder="Buscar... ex: restaurante, advocacia, SaaS" oninput="fl()"><span id="vc">61 templates</span></div></div>
+<div class="fi"><button class="fb active" data-filter="Todos">Todos <span>(61)</span></button>
+<button class="fb" data-filter="Saúde & Bem-Estar">Saúde & Bem-Estar <span>(9)</span></button>
+<button class="fb" data-filter="Gastronomia">Gastronomia <span>(7)</span></button>
+<button class="fb" data-filter="Serviços Profissionais">Serviços Profissionais <span>(11)</span></button>
+<button class="fb" data-filter="Imóveis & Construção">Imóveis & Construção <span>(7)</span></button>
+<button class="fb" data-filter="Tecnologia & SaaS">Tecnologia & SaaS <span>(11)</span></button>
+<button class="fb" data-filter="Comércio & Varejo">Comércio & Varejo <span>(5)</span></button>
+<button class="fb" data-filter="Educação & Eventos">Educação & Eventos <span>(7)</span></button>
+<button class="fb" data-filter="Portfolio & Freelancer">Portfolio & Freelancer <span>(4)</span></button></div>
+<div class="gw"><div class="gr" id="gr"><div class="card" data-niche="Saúde & Bem-Estar" data-name="clínica médica">
+<div class="ct"><iframe src="/clinica-medica-premium/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/clinica-medica-premium/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="clinica-medica-premium" data-name="Clínica Médica" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Clínica Médica</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="hospital & saúde">
+<div class="ct"><iframe src="/hospital-saude/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/hospital-saude/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="hospital-saude" data-name="Hospital & Saúde" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Hospital & Saúde</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="psicóloga clínica">
+<div class="ct"><iframe src="/psicologa-clinica/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/psicologa-clinica/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="psicologa-clinica" data-name="Psicóloga Clínica" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Psicóloga Clínica</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="consultório médico">
+<div class="ct"><iframe src="/consultorio-medico/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/consultorio-medico/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="consultorio-medico" data-name="Consultório Médico" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Consultório Médico</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="personal trainer">
+<div class="ct"><iframe src="/personal-trainer/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/personal-trainer/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="personal-trainer" data-name="Personal Trainer" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Personal Trainer</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="academia & fitness">
+<div class="ct"><iframe src="/academia-fitness/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/academia-fitness/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="academia-fitness" data-name="Academia & Fitness" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Academia & Fitness</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="fisioterapia">
+<div class="ct"><iframe src="/fisioterapia/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/fisioterapia/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="fisioterapia" data-name="Fisioterapia" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Fisioterapia</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="spa & bem-estar">
+<div class="ct"><iframe src="/spa-bem-estar/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/spa-bem-estar/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="spa-bem-estar" data-name="Spa & Bem-Estar" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Spa & Bem-Estar</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Saúde & Bem-Estar" data-name="clínica estética">
+<div class="ct"><iframe src="/clinica-estetica/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/clinica-estetica/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="clinica-estetica" data-name="Clínica Estética" data-niche="Saúde & Bem-Estar">&check; Usar</button></div>
+<span class="badge" style="background:#0d948822;border:1px solid #0d948855;color:#0d9488">Saúde</span></div>
+<div class="cf"><p class="cn">Clínica Estética</p><p class="cs">Saúde & Bem-Estar</p></div></div>
+<div class="card" data-niche="Gastronomia" data-name="restaurante premium">
+<div class="ct"><iframe src="/restaurante-pizzaria/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/restaurante-pizzaria/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="restaurante-pizzaria" data-name="Restaurante Premium" data-niche="Gastronomia">&check; Usar</button></div>
+<span class="badge" style="background:#d9770622;border:1px solid #d9770655;color:#d97706">Gastronomia</span></div>
+<div class="cf"><p class="cn">Restaurante Premium</p><p class="cs">Gastronomia</p></div></div>
+<div class="card" data-niche="Gastronomia" data-name="restaurante moderno">
+<div class="ct"><iframe src="/restaurante-moderno/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/restaurante-moderno/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="restaurante-moderno" data-name="Restaurante Moderno" data-niche="Gastronomia">&check; Usar</button></div>
+<span class="badge" style="background:#d9770622;border:1px solid #d9770655;color:#d97706">Gastronomia</span></div>
+<div class="cf"><p class="cn">Restaurante Moderno</p><p class="cs">Gastronomia</p></div></div>
+<div class="card" data-niche="Gastronomia" data-name="cafeteria">
+<div class="ct"><iframe src="/cafeteria-coffee-shop/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/cafeteria-coffee-shop/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="cafeteria-coffee-shop" data-name="Cafeteria" data-niche="Gastronomia">&check; Usar</button></div>
+<span class="badge" style="background:#d9770622;border:1px solid #d9770655;color:#d97706">Gastronomia</span></div>
+<div class="cf"><p class="cn">Cafeteria</p><p class="cs">Gastronomia</p></div></div>
+<div class="card" data-niche="Gastronomia" data-name="delivery / dark kitchen">
+<div class="ct"><iframe src="/delivery-dark-kitchen/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/delivery-dark-kitchen/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="delivery-dark-kitchen" data-name="Delivery / Dark Kitchen" data-niche="Gastronomia">&check; Usar</button></div>
+<span class="badge" style="background:#d9770622;border:1px solid #d9770655;color:#d97706">Gastronomia</span></div>
+<div class="cf"><p class="cn">Delivery / Dark Kitchen</p><p class="cs">Gastronomia</p></div></div>
+<div class="card" data-niche="Gastronomia" data-name="hotel & pousada">
+<div class="ct"><iframe src="/hotel-pousada/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/hotel-pousada/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="hotel-pousada" data-name="Hotel & Pousada" data-niche="Gastronomia">&check; Usar</button></div>
+<span class="badge" style="background:#d9770622;border:1px solid #d9770655;color:#d97706">Gastronomia</span></div>
+<div class="cf"><p class="cn">Hotel & Pousada</p><p class="cs">Gastronomia</p></div></div>
+<div class="card" data-niche="Gastronomia" data-name="bistrô gourmet">
+<div class="ct"><iframe src="/bistrô-gourmet/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/bistrô-gourmet/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="bistrô-gourmet" data-name="Bistrô Gourmet" data-niche="Gastronomia">&check; Usar</button></div>
+<span class="badge" style="background:#d9770622;border:1px solid #d9770655;color:#d97706">Gastronomia</span></div>
+<div class="cf"><p class="cn">Bistrô Gourmet</p><p class="cs">Gastronomia</p></div></div>
+<div class="card" data-niche="Gastronomia" data-name="nutrição saudável">
+<div class="ct"><iframe src="/nutricao-saudavel/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/nutricao-saudavel/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="nutricao-saudavel" data-name="Nutrição Saudável" data-niche="Gastronomia">&check; Usar</button></div>
+<span class="badge" style="background:#d9770622;border:1px solid #d9770655;color:#d97706">Gastronomia</span></div>
+<div class="cf"><p class="cn">Nutrição Saudável</p><p class="cs">Gastronomia</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="advogado & escritório">
+<div class="ct"><iframe src="/advogado-escritorio/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/advogado-escritorio/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="advogado-escritorio" data-name="Advogado & Escritório" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Advogado & Escritório</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="escritório de advocacia">
+<div class="ct"><iframe src="/escritorio-advocacia/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/escritorio-advocacia/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="escritorio-advocacia" data-name="Escritório de Advocacia" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Escritório de Advocacia</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="consultoria empresarial">
+<div class="ct"><iframe src="/consultoria-empresarial/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/consultoria-empresarial/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="consultoria-empresarial" data-name="Consultoria Empresarial" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Consultoria Empresarial</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="contador & contabilidade">
+<div class="ct"><iframe src="/contador-contabilidade/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/contador-contabilidade/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="contador-contabilidade" data-name="Contador & Contabilidade" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Contador & Contabilidade</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="agência de marketing">
+<div class="ct"><iframe src="/agencia-de-marketing/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/agencia-de-marketing/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="agencia-de-marketing" data-name="Agência de Marketing" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Agência de Marketing</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="agência digital">
+<div class="ct"><iframe src="/agencia-digital/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/agencia-digital/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="agencia-digital" data-name="Agência Digital" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Agência Digital</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="arquiteto & arquitetura">
+<div class="ct"><iframe src="/arquiteto-arquitetura/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/arquiteto-arquitetura/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="arquiteto-arquitetura" data-name="Arquiteto & Arquitetura" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Arquiteto & Arquitetura</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="designer & ux">
+<div class="ct"><iframe src="/designer-ux/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/designer-ux/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="designer-ux" data-name="Designer & UX" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Designer & UX</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="fotógrafo">
+<div class="ct"><iframe src="/fotografo/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/fotografo/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="fotografo" data-name="Fotógrafo" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Fotógrafo</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="fotógrafo premium">
+<div class="ct"><iframe src="/fotografo-premium/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/fotografo-premium/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="fotografo-premium" data-name="Fotógrafo Premium" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Fotógrafo Premium</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Serviços Profissionais" data-name="coach executivo">
+<div class="ct"><iframe src="/coach-executivo/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/coach-executivo/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="coach-executivo" data-name="Coach Executivo" data-niche="Serviços Profissionais">&check; Usar</button></div>
+<span class="badge" style="background:#b8975a22;border:1px solid #b8975a55;color:#b8975a">Serviços Profissionais</span></div>
+<div class="cf"><p class="cn">Coach Executivo</p><p class="cs">Serviços Profissionais</p></div></div>
+<div class="card" data-niche="Imóveis & Construção" data-name="imobiliária">
+<div class="ct"><iframe src="/imobiliaria/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/imobiliaria/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="imobiliaria" data-name="Imobiliária" data-niche="Imóveis & Construção">&check; Usar</button></div>
+<span class="badge" style="background:#78716c22;border:1px solid #78716c55;color:#78716c">Imóveis</span></div>
+<div class="cf"><p class="cn">Imobiliária</p><p class="cs">Imóveis & Construção</p></div></div>
+<div class="card" data-niche="Imóveis & Construção" data-name="construtora">
+<div class="ct"><iframe src="/construtora-incorporadora/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/construtora-incorporadora/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="construtora-incorporadora" data-name="Construtora" data-niche="Imóveis & Construção">&check; Usar</button></div>
+<span class="badge" style="background:#78716c22;border:1px solid #78716c55;color:#78716c">Imóveis</span></div>
+<div class="cf"><p class="cn">Construtora</p><p class="cs">Imóveis & Construção</p></div></div>
+<div class="card" data-niche="Imóveis & Construção" data-name="loteamento">
+<div class="ct"><iframe src="/loteamento/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/loteamento/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="loteamento" data-name="Loteamento" data-niche="Imóveis & Construção">&check; Usar</button></div>
+<span class="badge" style="background:#78716c22;border:1px solid #78716c55;color:#78716c">Imóveis</span></div>
+<div class="cf"><p class="cn">Loteamento</p><p class="cs">Imóveis & Construção</p></div></div>
+<div class="card" data-niche="Imóveis & Construção" data-name="incorporadora">
+<div class="ct"><iframe src="/incorporadora/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/incorporadora/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="incorporadora" data-name="Incorporadora" data-niche="Imóveis & Construção">&check; Usar</button></div>
+<span class="badge" style="background:#78716c22;border:1px solid #78716c55;color:#78716c">Imóveis</span></div>
+<div class="cf"><p class="cn">Incorporadora</p><p class="cs">Imóveis & Construção</p></div></div>
+<div class="card" data-niche="Imóveis & Construção" data-name="corretor de imóveis">
+<div class="ct"><iframe src="/corretor-imoveis/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/corretor-imoveis/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="corretor-imoveis" data-name="Corretor de Imóveis" data-niche="Imóveis & Construção">&check; Usar</button></div>
+<span class="badge" style="background:#78716c22;border:1px solid #78716c55;color:#78716c">Imóveis</span></div>
+<div class="cf"><p class="cn">Corretor de Imóveis</p><p class="cs">Imóveis & Construção</p></div></div>
+<div class="card" data-niche="Imóveis & Construção" data-name="imóveis premium">
+<div class="ct"><iframe src="/imoveis-premium/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/imoveis-premium/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="imoveis-premium" data-name="Imóveis Premium" data-niche="Imóveis & Construção">&check; Usar</button></div>
+<span class="badge" style="background:#78716c22;border:1px solid #78716c55;color:#78716c">Imóveis</span></div>
+<div class="cf"><p class="cn">Imóveis Premium</p><p class="cs">Imóveis & Construção</p></div></div>
+<div class="card" data-niche="Imóveis & Construção" data-name="reforma & decoração">
+<div class="ct"><iframe src="/reforma-decoracao/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/reforma-decoracao/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="reforma-decoracao" data-name="Reforma & Decoração" data-niche="Imóveis & Construção">&check; Usar</button></div>
+<span class="badge" style="background:#78716c22;border:1px solid #78716c55;color:#78716c">Imóveis</span></div>
+<div class="cf"><p class="cn">Reforma & Decoração</p><p class="cs">Imóveis & Construção</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="startup saas">
+<div class="ct"><iframe src="/startup-saas/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/startup-saas/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="startup-saas" data-name="Startup SaaS" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">Startup SaaS</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="produto ia / ai">
+<div class="ct"><iframe src="/produto-ia-ai-tool/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/produto-ia-ai-tool/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="produto-ia-ai-tool" data-name="Produto IA / AI" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">Produto IA / AI</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="saas dark premium">
+<div class="ct"><iframe src="/saas-dark-premium/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/saas-dark-premium/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="saas-dark-premium" data-name="SaaS Dark Premium" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">SaaS Dark Premium</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="fintech startup">
+<div class="ct"><iframe src="/fintech-startup/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/fintech-startup/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="fintech-startup" data-name="Fintech Startup" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">Fintech Startup</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="app ia criativo">
+<div class="ct"><iframe src="/app-ia-criativo/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/app-ia-criativo/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="app-ia-criativo" data-name="App IA Criativo" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">App IA Criativo</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="saas chat ai">
+<div class="ct"><iframe src="/saas-chat-ai/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/saas-chat-ai/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="saas-chat-ai" data-name="SaaS Chat AI" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">SaaS Chat AI</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="crm vendas ia">
+<div class="ct"><iframe src="/crm-vendas-ia/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/crm-vendas-ia/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="crm-vendas-ia" data-name="CRM Vendas IA" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">CRM Vendas IA</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="app mobile">
+<div class="ct"><iframe src="/app-mobile/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/app-mobile/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="app-mobile" data-name="App Mobile" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">App Mobile</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="app de viagens">
+<div class="ct"><iframe src="/app-viagens/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/app-viagens/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="app-viagens" data-name="App de Viagens" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">App de Viagens</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="agência tech">
+<div class="ct"><iframe src="/agencia-tech/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/agencia-tech/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="agencia-tech" data-name="Agência Tech" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">Agência Tech</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Tecnologia & SaaS" data-name="produto eletrônico">
+<div class="ct"><iframe src="/produto-eletronico/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/produto-eletronico/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="produto-eletronico" data-name="Produto Eletrônico" data-niche="Tecnologia & SaaS">&check; Usar</button></div>
+<span class="badge" style="background:#6366f122;border:1px solid #6366f155;color:#6366f1">Tecnologia</span></div>
+<div class="cf"><p class="cn">Produto Eletrônico</p><p class="cs">Tecnologia & SaaS</p></div></div>
+<div class="card" data-niche="Comércio & Varejo" data-name="lava-rápido">
+<div class="ct"><iframe src="/lava-rapido-auto-center/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/lava-rapido-auto-center/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="lava-rapido-auto-center" data-name="Lava-Rápido" data-niche="Comércio & Varejo">&check; Usar</button></div>
+<span class="badge" style="background:#e9456022;border:1px solid #e9456055;color:#e94560">Comércio</span></div>
+<div class="cf"><p class="cn">Lava-Rápido</p><p class="cs">Comércio & Varejo</p></div></div>
+<div class="card" data-niche="Comércio & Varejo" data-name="auto center">
+<div class="ct"><iframe src="/auto-center/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/auto-center/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="auto-center" data-name="Auto Center" data-niche="Comércio & Varejo">&check; Usar</button></div>
+<span class="badge" style="background:#e9456022;border:1px solid #e9456055;color:#e94560">Comércio</span></div>
+<div class="cf"><p class="cn">Auto Center</p><p class="cs">Comércio & Varejo</p></div></div>
+<div class="card" data-niche="Comércio & Varejo" data-name="mecânica">
+<div class="ct"><iframe src="/mecanica-automotiva/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/mecanica-automotiva/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="mecanica-automotiva" data-name="Mecânica" data-niche="Comércio & Varejo">&check; Usar</button></div>
+<span class="badge" style="background:#e9456022;border:1px solid #e9456055;color:#e94560">Comércio</span></div>
+<div class="cf"><p class="cn">Mecânica</p><p class="cs">Comércio & Varejo</p></div></div>
+<div class="card" data-niche="Comércio & Varejo" data-name="concessionária">
+<div class="ct"><iframe src="/concessionaria/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/concessionaria/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="concessionaria" data-name="Concessionária" data-niche="Comércio & Varejo">&check; Usar</button></div>
+<span class="badge" style="background:#e9456022;border:1px solid #e9456055;color:#e94560">Comércio</span></div>
+<div class="cf"><p class="cn">Concessionária</p><p class="cs">Comércio & Varejo</p></div></div>
+<div class="card" data-niche="Comércio & Varejo" data-name="barbearia & salão">
+<div class="ct"><iframe src="/barbearia-salao/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/barbearia-salao/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="barbearia-salao" data-name="Barbearia & Salão" data-niche="Comércio & Varejo">&check; Usar</button></div>
+<span class="badge" style="background:#e9456022;border:1px solid #e9456055;color:#e94560">Comércio</span></div>
+<div class="cf"><p class="cn">Barbearia & Salão</p><p class="cs">Comércio & Varejo</p></div></div>
+<div class="card" data-niche="Educação & Eventos" data-name="escola & colégio">
+<div class="ct"><iframe src="/escola-colegio/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/escola-colegio/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="escola-colegio" data-name="Escola & Colégio" data-niche="Educação & Eventos">&check; Usar</button></div>
+<span class="badge" style="background:#ec489922;border:1px solid #ec489955;color:#ec4899">Educação</span></div>
+<div class="cf"><p class="cn">Escola & Colégio</p><p class="cs">Educação & Eventos</p></div></div>
+<div class="card" data-niche="Educação & Eventos" data-name="curso presencial">
+<div class="ct"><iframe src="/curso-presencial/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/curso-presencial/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="curso-presencial" data-name="Curso Presencial" data-niche="Educação & Eventos">&check; Usar</button></div>
+<span class="badge" style="background:#ec489922;border:1px solid #ec489955;color:#ec4899">Educação</span></div>
+<div class="cf"><p class="cn">Curso Presencial</p><p class="cs">Educação & Eventos</p></div></div>
+<div class="card" data-niche="Educação & Eventos" data-name="universidade">
+<div class="ct"><iframe src="/universidade-faculdade/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/universidade-faculdade/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="universidade-faculdade" data-name="Universidade" data-niche="Educação & Eventos">&check; Usar</button></div>
+<span class="badge" style="background:#ec489922;border:1px solid #ec489955;color:#ec4899">Educação</span></div>
+<div class="cf"><p class="cn">Universidade</p><p class="cs">Educação & Eventos</p></div></div>
+<div class="card" data-niche="Educação & Eventos" data-name="academia de idiomas">
+<div class="ct"><iframe src="/academia-de-idiomas/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/academia-de-idiomas/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="academia-de-idiomas" data-name="Academia de Idiomas" data-niche="Educação & Eventos">&check; Usar</button></div>
+<span class="badge" style="background:#ec489922;border:1px solid #ec489955;color:#ec4899">Educação</span></div>
+<div class="cf"><p class="cn">Academia de Idiomas</p><p class="cs">Educação & Eventos</p></div></div>
+<div class="card" data-niche="Educação & Eventos" data-name="casamento & eventos">
+<div class="ct"><iframe src="/casamento-eventos-sociais/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/casamento-eventos-sociais/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="casamento-eventos-sociais" data-name="Casamento & Eventos" data-niche="Educação & Eventos">&check; Usar</button></div>
+<span class="badge" style="background:#ec489922;border:1px solid #ec489955;color:#ec4899">Educação</span></div>
+<div class="cf"><p class="cn">Casamento & Eventos</p><p class="cs">Educação & Eventos</p></div></div>
+<div class="card" data-niche="Educação & Eventos" data-name="evento presencial">
+<div class="ct"><iframe src="/evento-presencial/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/evento-presencial/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="evento-presencial" data-name="Evento Presencial" data-niche="Educação & Eventos">&check; Usar</button></div>
+<span class="badge" style="background:#ec489922;border:1px solid #ec489955;color:#ec4899">Educação</span></div>
+<div class="cf"><p class="cn">Evento Presencial</p><p class="cs">Educação & Eventos</p></div></div>
+<div class="card" data-niche="Educação & Eventos" data-name="festival & show">
+<div class="ct"><iframe src="/festival-show/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/festival-show/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="festival-show" data-name="Festival & Show" data-niche="Educação & Eventos">&check; Usar</button></div>
+<span class="badge" style="background:#ec489922;border:1px solid #ec489955;color:#ec4899">Educação</span></div>
+<div class="cf"><p class="cn">Festival & Show</p><p class="cs">Educação & Eventos</p></div></div>
+<div class="card" data-niche="Portfolio & Freelancer" data-name="freelancer dev">
+<div class="ct"><iframe src="/freelancer-dev/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/freelancer-dev/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="freelancer-dev" data-name="Freelancer Dev" data-niche="Portfolio & Freelancer">&check; Usar</button></div>
+<span class="badge" style="background:#8b5cf622;border:1px solid #8b5cf655;color:#8b5cf6">Portfolio</span></div>
+<div class="cf"><p class="cn">Freelancer Dev</p><p class="cs">Portfolio & Freelancer</p></div></div>
+<div class="card" data-niche="Portfolio & Freelancer" data-name="portfolio dev">
+<div class="ct"><iframe src="/portfolio-desenvolvedor/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/portfolio-desenvolvedor/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="portfolio-desenvolvedor" data-name="Portfolio Dev" data-niche="Portfolio & Freelancer">&check; Usar</button></div>
+<span class="badge" style="background:#8b5cf622;border:1px solid #8b5cf655;color:#8b5cf6">Portfolio</span></div>
+<div class="cf"><p class="cn">Portfolio Dev</p><p class="cs">Portfolio & Freelancer</p></div></div>
+<div class="card" data-niche="Portfolio & Freelancer" data-name="portfolio criativo">
+<div class="ct"><iframe src="/portfolio-criativo/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/portfolio-criativo/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="portfolio-criativo" data-name="Portfolio Criativo" data-niche="Portfolio & Freelancer">&check; Usar</button></div>
+<span class="badge" style="background:#8b5cf622;border:1px solid #8b5cf655;color:#8b5cf6">Portfolio</span></div>
+<div class="cf"><p class="cn">Portfolio Criativo</p><p class="cs">Portfolio & Freelancer</p></div></div>
+<div class="card" data-niche="Portfolio & Freelancer" data-name="portfolio pessoal">
+<div class="ct"><iframe src="/portfolio-pessoal/" loading="lazy" sandbox="allow-scripts allow-same-origin" style="position:absolute;top:0;left:0;width:1280px;height:900px;transform-origin:top left;transform:scale(.21875);pointer-events:none;border:none"></iframe>
+<div class="co"><a href="/portfolio-pessoal/" target="_blank" class="bn">&#8599; Navegar</a>
+<button class="bu" data-slug="portfolio-pessoal" data-name="Portfolio Pessoal" data-niche="Portfolio & Freelancer">&check; Usar</button></div>
+<span class="badge" style="background:#8b5cf622;border:1px solid #8b5cf655;color:#8b5cf6">Portfolio</span></div>
+<div class="cf"><p class="cn">Portfolio Pessoal</p><p class="cs">Portfolio & Freelancer</p></div></div></div><div class="empty" id="em">Nenhum resultado.</div></div>
+<div class="toast" id="toast"></div>
+<script>
+var af='Todos';
+function fl(){var q=document.getElementById('s').value.toLowerCase(),cs=document.querySelectorAll('.card'),v=0;cs.forEach(function(c){var ok=(af==='Todos'||c.dataset.niche===af)&&(!q||c.dataset.name.includes(q)||c.dataset.niche.toLowerCase().includes(q));c.classList.toggle('hidden',!ok);if(ok)v++;});document.getElementById('vc').textContent=v+' templates';document.getElementById('em').style.display=v===0?'block':'none';}
+document.querySelectorAll('.fb').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.fb').forEach(function(x){x.classList.remove('active');});b.classList.add('active');af=b.dataset.filter;fl();});});
+function sc(th){var i=th.querySelector('iframe');if(!i)return;var s=th.offsetWidth/1280;i.style.transform='scale('+s+')';i.style.height=Math.ceil(216/s)+'px';}
+var ro=new ResizeObserver(function(e){e.forEach(function(x){sc(x.target);});});
+document.querySelectorAll('.ct').forEach(function(t){sc(t);ro.observe(t);});
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(!x.isIntersecting)return;var i=x.target.querySelector('iframe');if(i){var src=i.src;i.src='';i.src=src;}io.unobserve(x.target);});},{rootMargin:'300px'});
+document.querySelectorAll('.card').forEach(function(c){io.observe(c);});
+document.querySelectorAll('.bu').forEach(function(btn){btn.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var slug=btn.dataset.slug,name=btn.dataset.name,niche=btn.dataset.niche;if(window.parent!==window){window.parent.postMessage({type:'AXIS_TEMPLATE_SELECTED',slug:slug,name:name,niche:niche},'*');}else{navigator.clipboard.writeText(slug).then(function(){toast('Copiado: '+name);});}});});
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},3000);}
+</script></body></html>
